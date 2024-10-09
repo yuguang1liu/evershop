@@ -20,6 +20,8 @@ getFileRecursive(path.resolve(__dirname, './bin/serve'), files);
 
 files.forEach((file) => {
   const source = fs.readFileSync(file, { encoding: 'utf8', flag: 'r' });
+  const test = 'ok'
+  console.log(test)
   const result = source.replace(/\.\.\/dist/g, '../src');
   fs.writeFileSync(file, result, 'utf8');
 });
